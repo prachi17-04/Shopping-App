@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<!--suppress HtmlUnknownTarget -->
+<head>
+    <meta charset="UTF-8">
+    <title>Shop</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+
+<body><nav>
+    <a href="/">Home</a> |
+    <a href="/about">About</a> |
+    <a href="/shop">Shop</a>
+</nav>
+<h1>Welcome to our store!!</h1>
+<p>Products will be listed soon!!!!</p>
+<div class="shop-container">
+    {% for products in items %}
+    <div class="products-card">
+        <img src="{{url_for('static',filename='images/'+products.image)}}" alt="{{products.name}}" style="max-width:50%; height:auto; border-radius:4px; margin-top:10px;">
+        <h3>{{products.name}}</h3>
+        <p>{{products.description}}</p>
+        <form action="{{url_for('add_to_cart',name=products.name)}}"
+              method="POST">
+        <button class="buy-btn">Add to cart</button>
+        </form>
+        {% endfor %}
+    </div>
+
+</div>
+</body>
+
