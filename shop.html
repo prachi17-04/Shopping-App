@@ -15,7 +15,7 @@
 <div class="shop-container">
     {% for products in items %}
     <div class="products-card">
-        <img src="{{url_for('static',filename='images/'+products.image)}}" alt="{{products.name}}" style="max-width:50%; height:auto; border-radius:4px; margin-top:10px;">
+        <img src="{{url_for('static',filename='images/'+products.image)}}" alt="{{products.png}}" style="max-width:50%; height:auto; border-radius:4px; margin-top:10px;">
         <h3>{{products.name}}</h3>
         <p>{{products.description}}</p>
         <form action="{{url_for('add_to_cart',name=products.name)}}"
