@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Cart</title>
+    {% if cart %}
+       {% for product in cart %}
+    <body>
+       <div>
+          <h3>{{product.name}}</h3>
+          <p>{{product.description}}</p>
+      </div>
+      {% endfor %}
+    {% else %}
+         <p>Your Cart is Empty.</p>
+       {% endif %}
+
+</body>
+</html>
